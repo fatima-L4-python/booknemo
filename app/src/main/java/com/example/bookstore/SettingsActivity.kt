@@ -16,7 +16,6 @@ class SettingsActivity : AppCompatActivity() {
     private lateinit var userPrefs: UserPrefs
     private lateinit var tvUserName: TextView
     private lateinit var tvUserEmail: TextView
-    private lateinit var switchDarkMode: Switch
     private lateinit var switchRememberMe: Switch
     private lateinit var btnViewPreferences: Button
     private lateinit var btnClearPreferences: Button
@@ -44,7 +43,6 @@ class SettingsActivity : AppCompatActivity() {
     private fun initViews() {
         tvUserName = findViewById(R.id.tvUserName)
         tvUserEmail = findViewById(R.id.tvUserEmail)
-        switchDarkMode = findViewById(R.id.switchDarkMode)
         switchRememberMe = findViewById(R.id.switchRememberMe)
         btnViewPreferences = findViewById(R.id.btnViewPreferences)
         btnClearPreferences = findViewById(R.id.btnClearPreferences)
@@ -59,14 +57,6 @@ class SettingsActivity : AppCompatActivity() {
     }
 
     private fun setupListeners() {
-        switchDarkMode.setOnCheckedChangeListener { _, isChecked ->
-            lifecycleScope.launch {
-                userPrefs.setDarkMode(isChecked)
-                Toast.makeText(this@SettingsActivity,
-                    if (isChecked) "Dark mode enabled" else "Dark mode disabled",
-                    Toast.LENGTH_SHORT).show()
-            }
-        }
 
         switchRememberMe.setOnCheckedChangeListener { _, isChecked ->
             lifecycleScope.launch {
@@ -118,7 +108,7 @@ class SettingsActivity : AppCompatActivity() {
             tvUserEmail.text = email
 
             // Load preferences
-            switchDarkMode.isChecked = userPrefs.isDarkMode.first()
+
             switchRememberMe.isChecked = userPrefs.rememberMeFlow.first()
         }
     }
