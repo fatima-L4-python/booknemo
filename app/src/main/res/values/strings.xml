@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">Bookstore</string>
+
+
+    <!-- Profile Screen -->
+    <string name="profile">Profile</string>
+    <string name="back">Back</string>
+    <string name="logout">Logout</string>
+    <string name="profile_picture">Profile Picture</string>
+    <string name="default_username">Book Lover</string>
+    <string name="default_email">booklover@example.com</string>
+    <string name="edit_profile">Edit profile</string>
+    <string name="content">Content</string>
+    <string name="favorites">Favorites</string>
+    <string name="downloads">Downloads</string>
+    <string name="navigate">Navigate</string>
+    <string name="preferences">Preferences</string>
+    <string name="dark_mode">Dark Mode</string>
+
+</resources>
